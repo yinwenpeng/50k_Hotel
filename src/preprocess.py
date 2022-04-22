@@ -15,7 +15,7 @@ def detect_object_and_attribute(input_file):
 
         chunk_list = []
         for chunk in piano_doc.noun_chunks:
-            words =chunk.split()
+            words =chunk.text.split()
             if words[0].lower() not in set(['the', 'a', 'an']):
                 chunk_list.append(chunk)
         writefile.write('file_id: ', file_id)
