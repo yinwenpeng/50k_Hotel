@@ -18,9 +18,9 @@ def detect_object_and_attribute(input_file):
             words =chunk.text.split()
             if words[0].lower() not in set(['the', 'a', 'an']):
                 chunk_list.append(chunk)
-        writefile.write('file_id: ', file_id)
-        writefile.write('query: ', sent)
-        writefile.write('objects: ', '; '.join(chunk_list)+'\n')
+        writefile.write('file_id: '+file_id)
+        writefile.write('query: '+sent)
+        writefile.write('objects: '+'; '.join(chunk_list)+'\n')
         # exit(0)
 
 
