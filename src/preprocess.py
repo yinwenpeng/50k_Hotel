@@ -11,8 +11,8 @@ def detect_object_and_attribute(input_file):
         sent = parts[1].strip()
         print(sent, '>>>\n')
         piano_doc = nlp(sent)
-        for token in piano_doc:
-            print (token.text, token.tag_, token.head.text, token.dep_)
+        for chunk in piano_doc.noun_chunks:
+            print (chunk)
         exit(0)
 
 
