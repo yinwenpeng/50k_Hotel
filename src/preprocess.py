@@ -11,7 +11,7 @@ def detect_object_and_attribute(input_file):
         parts = line.strip().split('txt: ')
         file_id = parts[0]+'txt'
         sent = parts[1].strip()
-        print(sent, '>>>\n')
+        # print(sent, '>>>\n')
         piano_doc = nlp(sent)
 
         chunk_list = []
@@ -19,9 +19,9 @@ def detect_object_and_attribute(input_file):
             words =chunk.text.split()
             if words[0].lower() not in set(['the', 'a', 'an']):
                 chunk_list.append(chunk.text)
-        writefile.write('file_id: '+file_id)
-        writefile.write('query: '+sent)
-        writefile.write('objects: '+'; '.join(chunk_list)+'\n')
+        writefile.write('file_id: '+file_id+'\n')
+        writefile.write('query: '+sent+'\n')
+        writefile.write('objects: '+'; '.join(chunk_list)+'\n\n')
         co+=1
         if co % 100 == 0:
             print(co)
